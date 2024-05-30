@@ -1,0 +1,2 @@
+ninja: Entering directory `/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/Debug/5h4o5k3i/x86_64'
+ninja: no work to do.
