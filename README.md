@@ -8,4 +8,7 @@ The project consists of an app written in Java Android, using [**OpenCV**](https
 **Dlib** is a modern C++ toolkit that contains machine learning algorithms and tools for creating complex software in various domains, such as image processing, computer vision, and robotics. It is designed to be highly modular and efficient, allowing developers to build high-performance applications.
 
 This project was built on the basis of a project written in Android Java for **Face Landmarks**. Refer to this repository: https://github.com/mhyrzt/Dlib-Android-Face-Landmark
+@mhyrzt created a project that includes the dlib library inside the android project, and uses the native library to detect face contours and landmarks.
+
+
 
