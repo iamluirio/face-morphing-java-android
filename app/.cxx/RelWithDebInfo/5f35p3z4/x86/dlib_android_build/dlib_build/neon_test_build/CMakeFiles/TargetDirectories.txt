@@ -1,3 +1,0 @@
-/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/RelWithDebInfo/5f35p3z4/x86/dlib_android_build/dlib_build/neon_test_build/CMakeFiles/rebuild_cache.dir
-/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/RelWithDebInfo/5f35p3z4/x86/dlib_android_build/dlib_build/neon_test_build/CMakeFiles/edit_cache.dir
-/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/RelWithDebInfo/5f35p3z4/x86/dlib_android_build/dlib_build/neon_test_build/CMakeFiles/neon_test.dir
