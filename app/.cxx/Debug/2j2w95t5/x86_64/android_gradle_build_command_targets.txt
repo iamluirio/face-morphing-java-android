@@ -1,0 +1,8 @@
+Executable : /home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/x86_64
+dlib_face_result
+dlib_utils
+jvmArgs : 
+

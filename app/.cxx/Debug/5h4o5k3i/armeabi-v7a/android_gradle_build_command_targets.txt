@@ -1,0 +1,8 @@
+Executable : /home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/Debug/5h4o5k3i/armeabi-v7a
+dlib_face_result
+dlib_utils
+jvmArgs : 
+

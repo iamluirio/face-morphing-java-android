@@ -1,0 +1,9 @@
+ninja: Entering directory `/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/Debug/5h4o5k3i/x86_64'
+[1/2] Building CXX object CMakeFiles/dlib_face_result.dir/dlib_face_result.cpp.o
+FAILED: CMakeFiles/dlib_face_result.dir/dlib_face_result.cpp.o 
+/home/pierluigi/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=x86_64-none-linux-android21 --gcc-toolchain=/home/pierluigi/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/pierluigi/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ddlib_face_result_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/dlib_face_result.dir/dlib_face_result.cpp.o -MF CMakeFiles/dlib_face_result.dir/dlib_face_result.cpp.o.d -o CMakeFiles/dlib_face_result.dir/dlib_face_result.cpp.o -c /home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/src/main/cpp/dlib_face_result.cpp
+/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/src/main/cpp/dlib_face_result.cpp:7:10: fatal error: 'dlib_android/dlib_utils.hpp' file not found
+#include "dlib_android/dlib_utils.hpp"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.

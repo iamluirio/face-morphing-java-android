@@ -1,0 +1,71 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/home/pierluigi/AndroidStudioProjects/facemorphing/app/src/main/cpp/CMakeLists.txt",
+    "/home/pierluigi/AndroidStudioProjects/facemorphing/app/src/main/cpp/dlib_android/CMakeLists.txt",
+    "/home/pierluigi/AndroidStudioProjects/facemorphing/app/src/main/cpp/dlib_android/dlib/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "dlib_face_result-Debug-arm64-v8a": {
+      "buildCommandComponents": [
+        "/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/arm64-v8a",
+        "dlib_face_result"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "dlib_face_result",
+      "output": "/home/pierluigi/AndroidStudioProjects/facemorphing/app/build/intermediates/cxx/Debug/2j2w95t5/obj/arm64-v8a/libdlib_face_result.so",
+      "runtimeFiles": [
+        "/home/pierluigi/AndroidStudioProjects/facemorphing/app/build/intermediates/cxx/Debug/2j2w95t5/obj/arm64-v8a/libdlib_utils.so"
+      ]
+    },
+    "dlib-Debug-arm64-v8a": {
+      "buildCommandComponents": [
+        "/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/arm64-v8a",
+        "dlib"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "dlib",
+      "output": "/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/arm64-v8a/dlib_android_build/dlib_build/libdlib.a"
+    },
+    "dlib_utils-Debug-arm64-v8a": {
+      "buildCommandComponents": [
+        "/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/arm64-v8a",
+        "dlib_utils"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "dlib_utils",
+      "output": "/home/pierluigi/AndroidStudioProjects/facemorphing/app/build/intermediates/cxx/Debug/2j2w95t5/obj/arm64-v8a/libdlib_utils.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

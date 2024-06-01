@@ -1,0 +1,71 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/src/main/cpp/CMakeLists.txt",
+    "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/src/main/cpp/dlib_android/CMakeLists.txt",
+    "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/src/main/cpp/dlib_android/dlib/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/Debug/5h4o5k3i/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/Debug/5h4o5k3i/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "dlib_utils-Debug-x86": {
+      "buildCommandComponents": [
+        "/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/Debug/5h4o5k3i/x86",
+        "dlib_utils"
+      ],
+      "buildType": "debug",
+      "abi": "x86",
+      "artifactName": "dlib_utils",
+      "output": "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/build/intermediates/cxx/Debug/5h4o5k3i/obj/x86/libdlib_utils.so",
+      "runtimeFiles": []
+    },
+    "dlib_face_result-Debug-x86": {
+      "buildCommandComponents": [
+        "/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/Debug/5h4o5k3i/x86",
+        "dlib_face_result"
+      ],
+      "buildType": "debug",
+      "abi": "x86",
+      "artifactName": "dlib_face_result",
+      "output": "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/build/intermediates/cxx/Debug/5h4o5k3i/obj/x86/libdlib_face_result.so",
+      "runtimeFiles": [
+        "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/build/intermediates/cxx/Debug/5h4o5k3i/obj/x86/libdlib_utils.so"
+      ]
+    },
+    "dlib-Debug-x86": {
+      "buildCommandComponents": [
+        "/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/Debug/5h4o5k3i/x86",
+        "dlib"
+      ],
+      "buildType": "debug",
+      "abi": "x86",
+      "artifactName": "dlib",
+      "output": "/home/pierluigi/AndroidStudioProjects/Dlib-Android-Face-Landmark-main/app/.cxx/Debug/5h4o5k3i/x86/dlib_android_build/dlib_build/libdlib.a"
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

@@ -1,0 +1,4 @@
+#Fri May 31 16:55:33 CEST 2024
+base.0=/home/pierluigi/AndroidStudioProjects/facemorphing/openCVLibrary3414/build/intermediates/dex/debugAndroidTest/mergeDexDebugAndroidTest/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

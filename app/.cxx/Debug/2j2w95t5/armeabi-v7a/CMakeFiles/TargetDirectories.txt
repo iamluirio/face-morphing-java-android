@@ -1,0 +1,9 @@
+/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/armeabi-v7a/CMakeFiles/dlib_face_result.dir
+/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/armeabi-v7a/dlib_android_build/CMakeFiles/rebuild_cache.dir
+/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/armeabi-v7a/dlib_android_build/CMakeFiles/edit_cache.dir
+/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/armeabi-v7a/dlib_android_build/CMakeFiles/dlib_utils.dir
+/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/armeabi-v7a/dlib_android_build/dlib_build/CMakeFiles/rebuild_cache.dir
+/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/armeabi-v7a/dlib_android_build/dlib_build/CMakeFiles/edit_cache.dir
+/home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/armeabi-v7a/dlib_android_build/dlib_build/CMakeFiles/dlib.dir

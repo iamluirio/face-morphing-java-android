@@ -1,0 +1,14 @@
+Determining if the function cblas_ddot exists failed with the following output:
+Change Dir: /home/pierluigi/AndroidStudioProjects/facemorphing/app/.cxx/Debug/2j2w95t5/arm64-v8a/CMakeFiles/CMakeTmp
+
+Run Build Command:"/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_82698"
+[1/2] Building C object CMakeFiles/cmTC_82698.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_82698
+FAILED: cmTC_82698 
+: && /home/pierluigi/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android21 --gcc-toolchain=/home/pierluigi/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/pierluigi/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -DCHECK_FUNCTION_EXISTS=cblas_ddot  -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,--gc-sections CMakeFiles/cmTC_82698.dir/CheckFunctionExists.c.o  -o cmTC_82698  -latomic -lm && :
+CMakeFiles/cmTC_82698.dir/CheckFunctionExists.c.o: In function `main':
+/home/pierluigi/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CheckFunctionExists.c:17: undefined reference to `cblas_ddot'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
