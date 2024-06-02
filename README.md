@@ -13,9 +13,8 @@ The project consists of an app written in Java Android, using [**OpenCV**](https
 
 - Finally, **for the process and steps that lead to the morphing of the two faces**, I am referring to the official guide of LearnOpenCV by @BIGVision: https://learnopencv.com/face-morph-using-opencv-cpp-python/
 
-The guide reports the general steps to get a correct morphing result, including the code written in C++/alternatively in python.
-in this project, we follow the theoretical steps to take two input images as an example, identify the facial key points and the correspondences in both, and follow the warping steps of the two images, to then merge them into a third.
-the project, as reported, creates an app written in Java Android.
+The [guide](https://learnopencv.com/face-morph-using-opencv-cpp-python/) reports the general steps to get a correct morphing result, including the code written in C++/alternatively in Python.
+In this project, I follow the theoretical steps to take two input images as an example, identify the facial key points and the correspondences in both, and follow the warping steps of the two images, to then merge them into a third.
 
 
 
