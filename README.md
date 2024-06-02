@@ -17,9 +17,9 @@ The [guide](https://learnopencv.com/face-morph-using-opencv-cpp-python/) reports
 In this project, I follow the theoretical steps to take two input images as an example, identify the facial key points and the correspondences in both, and follow the warping steps of the two images, to then merge them into a third.
 
 ## Usage
-...
+```
 git clone https://github.com/ptrespidi/face-morphing-java-android.git
-...
+```
 
 
 
