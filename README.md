@@ -7,5 +7,7 @@ The project consists of an app written in Java Android, using [**OpenCV**](https
 
 **Dlib** is a modern C++ toolkit that contains machine learning algorithms and tools for creating complex software in various domains, such as image processing, computer vision, and robotics. It is designed to be highly modular and efficient, allowing developers to build high-performance applications.
 
+For the process and steps that lead to the morphing of the two faces, I am referring to the official guide of LearnOpenCV by @BIGVision: https://learnopencv.com/face-morph-using-opencv-cpp-python/
+
 
 
