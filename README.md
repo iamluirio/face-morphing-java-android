@@ -7,7 +7,19 @@ The project consists of an app written in Java Android, using [**OpenCV**](https
 
 **Dlib** is a modern C++ toolkit that contains machine learning algorithms and tools for creating complex software in various domains, such as image processing, computer vision, and robotics. It is designed to be highly modular and efficient, allowing developers to build high-performance applications.
 
-For the process and steps that lead to the morphing of the two faces, I am referring to the official guide of LearnOpenCV by @BIGVision: https://learnopencv.com/face-morph-using-opencv-cpp-python/
+For the process to compile and embed Dlib in my Android Studio project, I am reffering to this online guide: https://ashiqulislamshaon.medium.com/setting-up-dlib-in-your-android-projects-using-android-studio-for-windows-and-mac-linux-3cb29273fdd0
+
+To include OpenCV in my Android Studio project, I referred to this online guide (but any guide that brings the version of OpenCV you want is fine): https://medium.com/@sdranju/android-studio-step-by-step-guide-for-setting-up-opencv-sdk-4-9-on-android-740547f3260b
+
+Finally, for the process and steps that lead to the morphing of the two faces, I am referring to the official guide of LearnOpenCV by @BIGVision: https://learnopencv.com/face-morph-using-opencv-cpp-python/
+
+The guide reports the general steps to get a correct morphing result, including the code written in C++/alternatively in python.
+in this project, we follow the theoretical steps to take two input images as an example, identify the facial key points and the correspondences in both, and follow the warping steps of the two images, to then merge them into a third.
+the project, as reported, creates an app written in Java Android.
+
+
+
+
 
 
 
