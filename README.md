@@ -35,10 +35,10 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 ```
 .
 ├── 
-│   ├── app
+│   └── app
 │       ├── src
-│       │   ├── main
-│       │       ├── assets
+│       │   └── main
+│       │       └── assets
 │       │           ├──  shape_predictor_68_face_landmarks_GTX.dat: Pre-trained model used by the Dlib library for facial landmark detection. This model has been trained to identify 68 specific points on the human face, which correspond to facial features such as eyes, eyebrows, nose, mouth, and facial contour.
 │       │           ├── cpp
 │       │           │   ├── dlib_android
@@ -54,5 +54,8 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 │       │           └── jniLibs
 │       │               └── arm64-v8a
 │       │                   └── libopencv_java3.so: OpenCV native library for Android that contains code compiled for the ARM64 architecture (arm64-v8a). Depending on the architecture of the Android device on which you decide to run and use the native libraries (arm64, armeabi, mips, x86), there is a different OS (see the other folders).
-        └── openCVLibrary3414: Folder of integrated OpenCV library.
+│       └── openCVLibrary3414: Folder of integrated OpenCV library.
+└── External Libraries
+    └── Android API 30 Platform: The project is using the set of SDK libraries and resources corresponding to Android version 30 (Android R).
+
 ```
