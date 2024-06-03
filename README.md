@@ -32,8 +32,6 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 ![Screenshot from 2024-06-03 15-33-11](https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/1d542871-239b-46a8-9b73-92a8ec914cdd)
 
 ## Project Structure
-![Screenshot from 2024-06-03 15-44-33](https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/626d729c-f116-40bb-9941-29a482097cef)
-![Screenshot from 2024-06-03 15-46-06](https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/c35cba33-9278-408c-860d-9f04e24899ca)
-![Screenshot from 2024-06-03 15-46-30](https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/f667b4ee-6e2c-4261-ba1f-1624bd05116a)
+
 
 
