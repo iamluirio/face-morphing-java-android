@@ -138,6 +138,10 @@ public static MatOfInt getDelaunayIndexes(MatOfFloat6 triangleList, MatOfPoint2f
     return triangles;
 }
 ```
+
+The following method reshapes the vertices from a MatOfInt object into a format suitable for further processing. It ensures that the number of rows in the input vertices matrix is a multiple of 3. 
+It creates a new MatOfInt (reshapedVertices) with the appropriate dimensions to hold the reshaped vertices, and iterates through the rows of the input vertices matrix, each representing a triangle. For each triangle, it copies the vertex indices and converts them from double to int, and puts the reshaped vertex indices into the reshapedVertices matrix.
+
 ```Java
 public static MatOfInt reshapeVertices(MatOfInt vertices) {
     // Verifica se il numero di righe in vertices è multiplo di 3
@@ -175,5 +179,65 @@ public static MatOfInt reshapeVertices(MatOfInt vertices) {
 }
 ```
 
-This method reshapes the vertices from a MatOfInt object into a format suitable for further processing. It ensures that the number of rows in the input vertices matrix is a multiple of 3. 
-It creates a new MatOfInt (reshapedVertices) with the appropriate dimensions to hold the reshaped vertices, and iterates through the rows of the input vertices matrix, each representing a triangle. For each triangle, it copies the vertex indices and converts them from double to int, and puts the reshaped vertex indices into the reshapedVertices matrix.
+### Morphing Triangles and Images
+```Java
+// Applying the morphing for each triangle
+    for (int i = 0; i < vertices.rows(); i++) {
+        int[] vertexIndexes = new int[3];
+        vertices.get(i, 0, vertexIndexes);
+
+        Point[] t1 = {firstM2F[vertexIndexes[0]], firstM2F[vertexIndexes[1]], firstM2F[vertexIndexes[2]]};
+        Point[] t2 = {secondM2F[vertexIndexes[0]], secondM2F[vertexIndexes[1]], secondM2F[vertexIndexes[2]]};
+        Point[] t = {thirdM2F[vertexIndexes[0]], thirdM2F[vertexIndexes[1]], thirdM2F[vertexIndexes[2]]};
+
+        morphTriangle(t1, t2, t);
+    }
+```
+
+The following code block calculates the bounding rectangles for three given triangles t1, t2, and t. These rectangles enclose each triangle, defining their respective regions in the image.
+
+```Java
+private void morphTriangle(Point[] t1, Point[] t2, Point[] t) {
+    Rect r1 = Imgproc.boundingRect(new MatOfPoint(t1));
+    Rect r2 = Imgproc.boundingRect(new MatOfPoint(t2));
+    Rect r  = Imgproc.boundingRect(new MatOfPoint(t));
+```
+
+The, it adjusts the points of the triangles t, t1, and t2 relative to the top-left corner of their respective bounding rectangles r, r1, and r2. It creates new arrays tRect, t1Rect, and t2Rect to store the adjusted points:
+
+```Java
+ // Sposta i punti rispetto all'angolo in alto a sinistra del rettangolo
+    Point[] t1Rect = new Point[3];
+    Point[] t2Rect = new Point[3];
+    Point[] tRect = new Point[3];
+
+    for (int i = 0; i < 3; i++) {
+        tRect[i] = new Point(t[i].x - r.x, t[i].y - r.y);
+        t1Rect[i] = new Point(t1[i].x - r1.x, t1[i].y - r1.y);
+        t2Rect[i] = new Point(t2[i].x - r2.x, t2[i].y - r2.y);
+    }
+    MatOfPoint tRectInt = new MatOfPoint();
+    tRectInt.fromArray(tRect);
+```
+
+Then, it create two empty images (warpImage1 and warpImage2) with the same dimensions as a bounding rectangle r. Then, they apply affine transformations to the regions defined by triangles t1Rect and t2Rect from images img1Rect and img2Rect, respectively, to align them with a target triangle tRect:
+
+```Java
+warpImage1 = Mat.zeros(r.height, r.width, img1Rect.type());
+warpImage2 = Mat.zeros(r.height, r.width, img2Rect.type());
+applyAffineTransform(warpImage1, img1Rect, t1Rect, tRect);
+applyAffineTransform(warpImage2, img2Rect, t2Rect, tRect);
+```
+
+Finally, perform the final steps of blending and copying triangular regions. It create an empty matrix imgRect to hold the blended rectangular patches, blends the warped images warpImage1 and warpImage2 using alpha blending, and stores the result in imgRect. It multiplies the triangular region of the morphed image imgMorph with the mask, and adds the blended rectangular patch imgRect to the triangular region of the morphed image imgMorph:
+
+```Java
+// Alpha blend rectangular patches
+Mat imgRect = new Mat();
+Core.addWeighted(warpImage1, 1.0 - alpha, warpImage2, alpha, 0, imgRect);
+
+// Copy triangular region of the rectangular patch to the output image
+Imgproc.cvtColor(imgRect, imgRect, Imgproc.COLOR_BGRA2BGR);
+Core.multiply(imgMorph.submat(r), mask, imgMorph.submat(r));
+Core.add(imgMorph.submat(r), imgRect, imgMorph.submat(r));
+```
