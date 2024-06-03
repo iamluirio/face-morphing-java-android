@@ -113,7 +113,7 @@ triangles = triangleList.toArray();
 ```
 
 ### Getting Delaunay Indexes and Reshaping
-After obtaining the triangles indexes from the previous step, it extracts Delaunay triangle indexes from the given triangleList and returns them as a MatOfInt. It loops through the triangles in triangleList, where each triangle is represented by six floats (presumably three pairs of x-y coordinates).
+After obtaining the triangles indexes from the previous step, it extracts Delaunay triangle indexes from the given triangleList and returns them as a MatOfInt. It loops through the triangles in triangleList, where each triangle is represented by six floats (presumably three pairs of x-y coordinates):
 
 ```Java
 public static MatOfInt getDelaunayIndexes(MatOfFloat6 triangleList, MatOfPoint2f fsMatOfPoint2f) {
@@ -138,3 +138,42 @@ public static MatOfInt getDelaunayIndexes(MatOfFloat6 triangleList, MatOfPoint2f
     return triangles;
 }
 ```
+```Java
+public static MatOfInt reshapeVertices(MatOfInt vertices) {
+    // Verifica se il numero di righe in vertices è multiplo di 3
+    if (vertices.rows() % 3 != 0) {
+        throw new IllegalArgumentException("Il numero di righe in vertices deve essere multiplo di 3.");
+    }
+
+    // Crea la nuova MatOfInt con 3 colonne
+    MatOfInt reshapedVertices = new MatOfInt();
+    int numRows = vertices.rows() / 3;
+    reshapedVertices.create(numRows, 3, CvType.CV_32S);
+
+    // Copia i dati da vertices alla nuova MatOfInt
+    for (int i = 0; i < numRows; i++) {
+        double[] row1 = vertices.get(i * 3, 0);
+        double[] row2 = vertices.get(i * 3 + 1, 0);
+        double[] row3 = vertices.get(i * 3 + 2, 0);
+
+        // Converte ogni elemento dell'array double[] a int
+        int[] intRow1 = new int[row1.length];
+        int[] intRow2 = new int[row2.length];
+        int[] intRow3 = new int[row3.length];
+
+        for (int j = 0; j < row1.length; j++) {
+            intRow1[j] = (int) row1[j];
+            intRow2[j] = (int) row2[j];
+            intRow3[j] = (int) row3[j];
+        }
+
+        reshapedVertices.put(i, 0, intRow1);
+        reshapedVertices.put(i, 1, intRow2);
+        reshapedVertices.put(i, 2, intRow3);
+    }
+    return reshapedVertices;
+}
+```
+
+This method reshapes the vertices from a MatOfInt object into a format suitable for further processing. It ensures that the number of rows in the input vertices matrix is a multiple of 3. 
+It creates a new MatOfInt (reshapedVertices) with the appropriate dimensions to hold the reshaped vertices, and iterates through the rows of the input vertices matrix, each representing a triangle. For each triangle, it copies the vertex indices and converts them from double to int, and puts the reshaped vertex indices into the reshapedVertices matrix.
