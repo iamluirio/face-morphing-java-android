@@ -37,11 +37,11 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 ├── 
 │   ├── app
 │   │   ├── src
-│   │       ├── main
-                ├── assets
-                    ├──  shape_predictor_68_face_landmarks_GTX.dat: Pre-trained model used by the Dlib library for facial landmark detection. This model has been trained to identify 68 specific points on the human face, which correspond to facial features such as eyes, eyebrows, nose, mouth, and facial contour.
+│   │   │   ├── main
+│   │   │   │   ├── assets
+│   │   │   │   │   ├──  shape_predictor_68_face_landmarks_GTX.dat: Pre-trained model used by the Dlib library for facial landmark detection. This model has been trained to identify 68 specific points on the human face, which correspond to facial features such as eyes, eyebrows, nose, mouth, and facial contour.
 │   │   │   │   │   ├── cpp
-│   │   │   │   │       ├── dlib_android
+│   │   │   │   │   │   ├── dlib_android
 │   │   │   │   │   │   │   ├── CMakeLists.txt: It configure the build for the project, include Dlib and link the native library.
 │   │   │   │   │   │   │   ├── dlib_utils.hpp: It contains declarations for utility functions to initialize Dlib and detect facial landmarks.
 │   │   │   │   │   │   │   ├── dlib_face_result.cpp: It contains code to handle the face detection results and return them in a form that can be easily consumed from the Java side of the application.
