@@ -11,7 +11,7 @@ The project consists of an app written in **Java Android**, using [**OpenCV**](h
 
 - **To include OpenCV in my Android Studio project**, I referred to this online guide (but any guide that brings the version of OpenCV you want is fine): https://medium.com/@sdranju/android-studio-step-by-step-guide-for-setting-up-opencv-sdk-4-9-on-android-740547f3260b
 
-- Finally, **for the process and steps that lead to the morphing of the two faces**, I am referring to the official guide of LearnOpenCV by @BIGVision: https://learnopencv.com/face-morph-using-opencv-cpp-python/
+- Finally, **for the process and steps that lead to the morphing of the two faces**, I am referring to **the official guide of LearnOpenCV by @BIGVision**: https://learnopencv.com/face-morph-using-opencv-cpp-python/
 
 The [guide](https://learnopencv.com/face-morph-using-opencv-cpp-python/) reports the general steps to get a correct morphing result, including the code written in C++/alternatively in Python.
 In this project, I follow the theoretical steps to take two input images as an example, identify the facial key points and the correspondences in both, and follow the warping steps of the two images, to then merge them into a third.
