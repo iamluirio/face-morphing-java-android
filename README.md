@@ -39,20 +39,20 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 │   │   ├── src
 │   │       ├── main
                 ├── assets
-                    ├──  [shape_predictor_68_face_landmarks_GTX.dat](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/assets/shape_predictor_68_face_landmarks_GTX.dat): Pre-trained model used by the Dlib library for facial landmark detection. This model has been trained to identify 68 specific points on the human face, which correspond to facial features such as eyes, eyebrows, nose, mouth, and facial contour.
+                    ├──  shape_predictor_68_face_landmarks_GTX.dat: Pre-trained model used by the Dlib library for facial landmark detection. This model has been trained to identify 68 specific points on the human face, which correspond to facial features such as eyes, eyebrows, nose, mouth, and facial contour.
 │   │   │   │   │   ├── cpp
 │   │   │   │   │       ├── dlib_android
-│   │   │   │   │   │   │   ├── [CMakeLists.txt](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/cpp/dlib_android/CMakeLists.txt): It configure the build for the project, include Dlib and link the native library.
-│   │   │   │   │   │   │   ├── [dlib_utils.hpp](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/cpp/dlib_android/dlib_utils.hpp): It contains declarations for utility functions to initialize Dlib and detect facial landmarks.
-│   │   │   │   │   │   │   ├── [dlib_face_result.cpp](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/cpp/dlib_face_result.cpp): It contains code to handle the face detection results and return them in a form that can be easily consumed from the Java side of the application.
+│   │   │   │   │   │   │   ├── CMakeLists.txt: It configure the build for the project, include Dlib and link the native library.
+│   │   │   │   │   │   │   ├── dlib_utils.hpp: It contains declarations for utility functions to initialize Dlib and detect facial landmarks.
+│   │   │   │   │   │   │   ├── dlib_face_result.cpp: It contains code to handle the face detection results and return them in a form that can be easily consumed from the Java side of the application.
 │   │   │   │   │   ├── java
 │   │   │   │   │   │   ├── com.android.facemorphing
-│   │   │   │   │   │   │   ├── [DlibResult.java](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/java/com/android/facemorphing/DLibResult.java): Java class that interacts with native libraries (C++) using JNI (Java Native Interface) to perform face detection with Dlib.
-│   │   │   │   │   │   │   ├── [FaceDetectorOpenCV.java](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/java/com/android/facemorphing/FaceDetectorOpenCv.java): It uses OpenCV to detect faces in an image. It is designed to configure OpenCV, load the [Haar cascade classifier](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/res/raw/haarcascade_frontalface_alt2.xml) for face detection, and provide a method for detecting faces in a bitmap image.
-│   │   │   │   │   │   │   ├── [Face.java](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/java/com/android/facemorphing/Face.java): Designed to represent a detected face in an image. It contains information about specific positions of the face (landmarks), a lip mask, and other features related to face processing.
-│   │   │   │   │   │   │   ├── [Test.java](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/java/com/android/facemorphing/Test.java): It contains the face morphing process and steps.
+│   │   │   │   │   │   │   ├── DlibResult.java: Java class that interacts with native libraries (C++) using JNI (Java Native Interface) to perform face detection with Dlib.
+│   │   │   │   │   │   │   ├── FaceDetectorOpenCV.java: It uses OpenCV to detect faces in an image. It is designed to configure OpenCV, load the Haar cascade classifier for face detection, and provide a method for detecting faces in a bitmap image.
+│   │   │   │   │   │   │   ├── Face.java: Designed to represent a detected face in an image. It contains information about specific positions of the face (landmarks), a lip mask, and other features related to face processing.
+│   │   │   │   │   │   │   ├── Test.java: It contains the face morphing process and steps.
 │   │   │   │   │   ├── jniLibs
 │   │   │   │   │   │   ├── arm64-v8a
-│   │   │   │   │   │   │   ├── [libopencv_java3.so](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/jniLibs/arm64-v8a/libopencv_java3.so): OpenCV native library for Android that contains code compiled for the ARM64 architecture (arm64-v8a). Depending on the architecture of the Android device on which you decide to run and use the native libraries (arm64, armeabi, mips, x86), there is a different OS (see the other folders).
+│   │   │   │   │   │   │   ├── libopencv_java3.so: OpenCV native library for Android that contains code compiled for the ARM64 architecture (arm64-v8a). Depending on the architecture of the Android device on which you decide to run and use the native libraries (arm64, armeabi, mips, x86), there is a different OS (see the other folders).
 
 ```
