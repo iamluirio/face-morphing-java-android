@@ -60,25 +60,28 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 
 ```
 ## Morphing Process
+Let's see below the steps that lead to the morphing of the two faces (code is inside [Test.java](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/java/com/android/facemorphing/Test.java)).
+
+### Loading the Image and Identifying the Facial Landmarks
 ```Java
-// Process the first image
+// Processing the first image
 dLibResult.processFrame(img1);
 ArrayList<Face> faces = dLibResult.getFaces();
 
-// Iterare attraverso le facce
+// Iterating through faces
 for (Face face : faces) {
-     // Ottenere le posizioni facciali per ogni faccia
+     // Obtaining facial position for each face
      ArrayList<Position> facePositions = face.getPositions();
 
-     // Creare un array di keypoints per la faccia corrente
+     // Creating an array for current face
      KeyPoint[] keypointsArray = new KeyPoint[facePositions.size()];
 
-     // Creare i KeyPoints e aggiungerli all'array
+     // Adding keypoints to an array
      for (int i = 0; i < facePositions.size(); i++) {
          Position position = facePositions.get(i);
          keypointsArray[i] = new KeyPoint((float) position.getX(), (float) position.getY(), 5);
      }
-     // Aggiungere gli array di KeyPoints alla MatOfKeyPoint
+     // Adding keypoints to Matofkeypoints
      firstKeyPoints.fromArray(keypointsArray);
 }
 ```
