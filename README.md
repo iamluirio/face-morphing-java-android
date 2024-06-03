@@ -34,10 +34,12 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 ## Project Structure
 ```
 .
-├── assets
-│   ├── css
-│   │   ├── index-ui.css
-│   │   └── rate-ui.css
+├── 
+│   ├── app
+│   │   ├── src
+│   │       ├── main
+                ├── assets
+                    ├──  shape_predictor_68_face_landmarks_GTX.dat: The shape_predictor_68_face_landmarks_GTX.dat file is a pre-trained model used by the                            Dlib library for facial landmark detection. This model has been trained to identify 68 specific points on the human face, which                             correspond to facial features such as eyes, eyebrows, nose, mouth, and facial contour.
 │   ├── images
 │   │   ├── icons
 │   │   │   ├── shrink-button.png
