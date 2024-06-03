@@ -32,25 +32,4 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 ![Screenshot from 2024-06-03 15-33-11](https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/1d542871-239b-46a8-9b73-92a8ec914cdd)
 
 ## Project Structure
-facemorphing/
-|-- app
-|   |-- build
-|   |-- build.gradle
-|   |-- proguard-rules.pro
-|   `-- src
-|-- build.gradle
-|-- gradle
-|   `-- wrapper
-|-- gradle.properties
-|-- gradlew
-|-- gradlew.bat
-|-- import-summary.txt
-|-- LICENSE
-|-- local.properties
-|-- openCVLibrary3414
-|   |-- build
-|   |-- build.gradle
-|   |-- lint.xml
-|   `-- src
-|-- README.md
-`-- settings.gradle
+
