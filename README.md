@@ -34,5 +34,34 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 ## Project Structure
 facemorphing/
 ├── app
+│   ├── build
+│   │   ├── generated
+│   │   │   ├── ap_generated_sources
+│   │   │   │   ├── debug
+│   │   │   │   │   └── out
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── out
+│   │   │   │   └── debugUnitTest
+│   │   │   │       └── out
+│   │   │   ├── data_binding_base_class_source_out
+│   │   │   │   ├── debug
+│   │   │   │   │   └── out
+│   │   │   │   │       └── com
+│   │   │   │   │           └── android
+│   │   │   │   │               └── facemorphing
+│   │   │   │   │                   └── databinding
+│   │   │   │   │                       ├── ActivityMainBinding.java
+│   │   │   │   │                       ├── RealcameraActivityBinding.java
+│   │   │   │   │                       └── TestactivityBinding.java
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── out
+│   │   │   ├── res
+│   │   │   │   ├── pngs
+│   │   │   │   │   └── debug
+│   │   │   │   │       └── drawable-anydpi-v24
+│   │   │   │   │           └── ic_launcher_foreground.xml
+│   │   │   │   └── resValues
+│   │   │   │       ├── androidTest
+│   │   │   │       │   └── debug
 
 
