@@ -29,6 +29,7 @@ For the simplicity of the project, I did not focus on adding functionality to th
 The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=https%3A%2F%2Fit.wikiquote.org%2Fwiki%2FHillary_Clinton&psig=AOvVaw02vmpCURCC3hRz8hBEBfv0&ust=1717495315355000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMCI7uKWv4YDFQAAAAAdAAAAABAE) and [Senator Ted Cruz](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.texastribune.org%2Fdirectory%2Fted-cruz%2F&psig=AOvVaw18neygGh8LPqCv0vHTwwz2&ust=1717495282177000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCNDcitmWv4YDFQAAAAAdAAAAABAE) are in the Public Domain.
 
 ![Screenshot from 2024-06-03 15-27-49](https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/20f5899d-e477-437b-ab7c-b444964d22f0)
+![Screenshot from 2024-06-03 15-33-11](https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/1d542871-239b-46a8-9b73-92a8ec914cdd)
 
 
 
