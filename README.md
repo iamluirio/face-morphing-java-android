@@ -64,7 +64,7 @@ Let's see below the steps that lead to the morphing of the two faces (code is in
 
 ### Loading the Image and Identifying the Facial Landmarks
 ```Java
-// Processing the first image
+// Processing the image
 dLibResult.processFrame(img1);
 ArrayList<Face> faces = dLibResult.getFaces();
 
@@ -83,5 +83,58 @@ for (Face face : faces) {
      }
      // Adding keypoints to Matofkeypoints
      firstKeyPoints.fromArray(keypointsArray);
+}
+```
+
+### Delaunay Triangulation
+**Delaunay triangulation** is a technique used in computational geometry to triangulate a set of points in a plane in such a way that no point is inside the circumcircle of any triangle formed by the points. In simpler terms, it creates a network of triangles connecting a given set of points such that the triangles do not overlap or have excessively acute angles.
+
+```Java
+Size size = firstImage.size();
+rect = new Rect(0, 0, (int) size.width, (int) size.height);
+Subdiv2D subdiv2D = new Subdiv2D(rect);
+
+FSkeyPoints = mediaKeyPoints.toArray();
+FSarrayOfPoints = new ArrayList<>();
+
+for(int i = 0; i < FSkeyPoints.length; i++) {
+    FSarrayOfPoints.add(FSkeyPoints[i].pt);
+}
+
+fsMatOfPoint2f = new MatOfPoint2f();
+fsMatOfPoint2f.fromList(FSarrayOfPoints);
+
+subdiv2D.insert(fsMatOfPoint2f);
+triangleList = new MatOfFloat6();
+subdiv2D.getTriangleList(triangleList);
+
+org.opencv.core.Point[] pt = new org.opencv.core.Point[3];
+triangles = triangleList.toArray();
+```
+
+### Getting Delaunay Indexes and Reshaping
+After obtaining the triangles indexes from the previous step, it extracts Delaunay triangle indexes from the given triangleList and returns them as a MatOfInt. It loops through the triangles in triangleList, where each triangle is represented by six floats (presumably three pairs of x-y coordinates).
+
+```Java
+public static MatOfInt getDelaunayIndexes(MatOfFloat6 triangleList, MatOfPoint2f fsMatOfPoint2f) {
+    Point[] pointArray = fsMatOfPoint2f.toArray();
+    float[] trianglesArray = triangleList.toArray();
+    MatOfInt triangles = new MatOfInt();
+
+    for (int i = 0; i < trianglesArray.length; i += 6) {
+        int[] vertexes = new int[3];
+        for (int v = 0; v < 3; v++) {
+            double x = trianglesArray[i + v * 2];
+            double y = trianglesArray[i + v * 2 + 1];
+            for (int j = 0; j < pointArray.length; j++) {
+                if (x == pointArray[j].x && y == pointArray[j].y) {
+                    vertexes[v] = j;
+                    break;
+                }
+            }
+        }
+        triangles.push_back(new MatOfInt(vertexes));
+    }
+    return triangles;
 }
 ```
