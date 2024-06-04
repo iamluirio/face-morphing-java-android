@@ -294,7 +294,7 @@ Core.add(imgMorph.submat(r), imgRect, imgMorph.submat(r));
 
 ### Results
 <p align="center">
-  ![Screenshot_from_2024-06-03_15-33-11-removebg-preview](https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/b3dcfb37-7d2c-44f7-903a-ef67038a8051)
+    <img src="[http://some_place.com/image.png](https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/b3dcfb37-7d2c-44f7-903a-ef67038a8051)" />
 </p>
 
 
