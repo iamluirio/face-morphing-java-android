@@ -59,7 +59,9 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 ## Morphing Process
 Let's see below the steps that lead to the morphing of the two faces (code is inside [Test.java](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/java/com/android/facemorphing/Test.java)).
 
-### Loading the Image and Identifying the Facial Landmarks
+### Identifying the Facial Landmarks
+The **dLibResult** is responsible for handling the results of dlib's facial detection and recognition algorithms. After processing the image, we retrieve a list of detected faces using **dLibResult.getFaces()**. For each face, we retrieve the positions of various facial landmarks (keypoints). We identify 68 facial landmarks using the pretrained _shape_predictor_68_face_landmarks_GTX.dat_.
+
 ```Java
 // Processing the image
 dLibResult.processFrame(img1);
@@ -83,8 +85,44 @@ for (Face face : faces) {
 }
 ```
 
+To consider the whole image, we manually add the 4 points in the corners, plus the ones in the middle:
+
+```Java
+// Adding points of angles of image and their middle
+keyPointList1 = firstKeyPoints.toList();
+
+Point topLeft = new Point(0, 0);
+Point topRight = new Point(firstImage.cols() - 1, 0);
+Point bottomLeft = new Point(0, firstImage.rows() - 1);
+Point bottomRight = new Point(firstImage.cols() - 1, firstImage.rows() - 1);
+
+Point middleTop = new Point((topLeft.x + topRight.x) / 2, (topLeft.y + topRight.y) / 2);
+Point middleBottom = new Point((bottomLeft.x + bottomRight.x) / 2, (bottomLeft.y + bottomRight.y) / 2);
+Point middleLeft = new Point((topLeft.x + bottomLeft.x) / 2, (topLeft.y + bottomLeft.y) / 2);
+Point middleRight = new Point((topRight.x + bottomRight.x) / 2, (topRight.y + bottomRight.y) / 2);
+```
+
 ### Delaunay Triangulation
 **Delaunay triangulation** is a technique used in computational geometry to triangulate a set of points in a plane in such a way that no point is inside the circumcircle of any triangle formed by the points. In simpler terms, it creates a network of triangles connecting a given set of points such that the triangles do not overlap or have excessively acute angles.
+To apply the technique, and apply it to both images, **we average the coordinates between the two sets of points**, and use the new calculated coordinates:
+
+```Java
+ int numPunti = arrayKeyPoints1.length;
+KeyPoint[] arrayMediaKeyPoints = new KeyPoint[numPunti];
+
+for (int i = 0; i < numPunti; i++) {
+    float xMedia = (float) ((arrayKeyPoints1[i].pt.x + arrayKeyPoints2[i].pt.x) / 2.0);
+    float yMedia = (float) ((arrayKeyPoints1[i].pt.y + arrayKeyPoints2[i].pt.y) / 2.0);
+    float sizeMedia = (float) ((arrayKeyPoints1[i].size + arrayKeyPoints2[i].size) / 2.0);
+    float angleMedia = (float) ((arrayKeyPoints1[i].angle + arrayKeyPoints2[i].angle) / 2.0);
+    float responseMedia = (float) ((arrayKeyPoints1[i].response + arrayKeyPoints2[i].response) / 2.0);
+    int octaveMedia = (arrayKeyPoints1[i].octave + arrayKeyPoints2[i].octave) / 2;
+
+    arrayMediaKeyPoints[i] = new KeyPoint(xMedia, yMedia, sizeMedia, angleMedia, responseMedia, octaveMedia);
+}
+```
+Then, we exploit the **subdiv2D** object for Delaunay triangulation, which is a method to divide the plane into triangles with specific properties.
+_triangleList_ is a MatOfFloat6 object, which will store the resulting triangles from the triangulation. Each triangle is represented by six floating-point values (the coordinates of its three vertices):
 
 ```Java
 Size size = firstImage.size();
@@ -109,8 +147,23 @@ org.opencv.core.Point[] pt = new org.opencv.core.Point[3];
 triangles = triangleList.toArray();
 ```
 
+### Calculating Linear Interpolation for Morphed Image
+Given two images _I_ and _J_, we want to create an in-between image _M_ by blending the two images. The blending is controlled by a parameter _α_ between 0 and 1. When _α_ is 1, _M_ looks exactly like _J_. Naively, we can blend the images using the following equation at every pixel _(x, y)_: _M(x, y) = (1-α)I(x, y) + αJ(x, y)_.
+
+Before doing this, **we firstly need to establish pixel corrispondence between the two images**. In other words, for every pixel _(xi, yi)_ in image _I_, we need to find it's corresponding pixel _(xj, yj)_ in image J. We calculate the location _(xm, ym)_:
+
+```Java
+for(int i = 0; i < firstM2F.length; i++) {
+    double x, y;
+    x = (1 - alpha) * firstM2F[i].x + alpha * secondM2F[i].x;
+    y = (1 - alpha) * firstM2F[i].y + alpha * secondM2F[i].y;
+
+    TarrayOfPoints.add(new org.opencv.core.Point(x, y));
+        }
+```
+
 ### Getting Delaunay Indexes and Reshaping
-After obtaining the triangles indexes from the previous step, it extracts Delaunay triangle indexes from the given triangleList and returns them as a MatOfInt. It loops through the triangles in triangleList, where each triangle is represented by six floats (presumably three pairs of x-y coordinates):
+After obtaining the triangles indexes from the previous step, we extract **Delaunay triangle indexes from the given triangleList** and returns them as a MatOfInt. We loop through the triangles in triangleList, where each triangle is represented by six floats (presumably three pairs of x-y coordinates):
 
 ```Java
 public static MatOfInt getDelaunayIndexes(MatOfFloat6 triangleList, MatOfPoint2f fsMatOfPoint2f) {
@@ -136,8 +189,8 @@ public static MatOfInt getDelaunayIndexes(MatOfFloat6 triangleList, MatOfPoint2f
 }
 ```
 
-The following method reshapes the vertices from a MatOfInt object into a format suitable for further processing. It ensures that the number of rows in the input vertices matrix is a multiple of 3. 
-It creates a new MatOfInt (reshapedVertices) with the appropriate dimensions to hold the reshaped vertices, and iterates through the rows of the input vertices matrix, each representing a triangle. For each triangle, it copies the vertex indices and converts them from double to int, and puts the reshaped vertex indices into the reshapedVertices matrix.
+The following method **reshapes the vertices from a MatOfInt object into a format suitable for further processing**. It ensures that **the number of rows in the input vertices matrix is a multiple of 3**. 
+We create a new MatOfInt (reshapedVertices) with the appropriate dimensions to hold the reshaped vertices, and iterate through the rows of the input vertices matrix, each representing a triangle. For each triangle, we copy the vertex indices and converts them from double to int, and puts the reshaped vertex indices into the reshapedVertices matrix.
 
 ```Java
 public static MatOfInt reshapeVertices(MatOfInt vertices) {
@@ -191,7 +244,7 @@ public static MatOfInt reshapeVertices(MatOfInt vertices) {
     }
 ```
 
-The following code block calculates the bounding rectangles for three given triangles t1, t2, and t. These rectangles enclose each triangle, defining their respective regions in the image.
+We calculate the **bounding rectangles** for three given triangles t1, t2, and t. These rectangles enclose each triangle, defining their respective regions in the image:
 
 ```Java
 private void morphTriangle(Point[] t1, Point[] t2, Point[] t) {
@@ -200,7 +253,7 @@ private void morphTriangle(Point[] t1, Point[] t2, Point[] t) {
     Rect r  = Imgproc.boundingRect(new MatOfPoint(t));
 ```
 
-The, it adjusts the points of the triangles t, t1, and t2 relative to the top-left corner of their respective bounding rectangles r, r1, and r2. It creates new arrays tRect, t1Rect, and t2Rect to store the adjusted points:
+Then, we adjust the points of the triangles t, t1, and t2 relative to the top-left corner of their respective bounding rectangles r, r1, and r2. We create new arrays tRect, t1Rect, and t2Rect to store the adjusted points:
 
 ```Java
  // Sposta i punti rispetto all'angolo in alto a sinistra del rettangolo
@@ -217,7 +270,7 @@ The, it adjusts the points of the triangles t, t1, and t2 relative to the top-le
     tRectInt.fromArray(tRect);
 ```
 
-Then, it create two empty images (warpImage1 and warpImage2) with the same dimensions as a bounding rectangle r. Then, they apply affine transformations to the regions defined by triangles t1Rect and t2Rect from images img1Rect and img2Rect, respectively, to align them with a target triangle tRect:
+We proceeding creating two empty images (warpImage1 and warpImage2) with the same dimensions as a bounding rectangle r. Then, we apply **affine transformations** to the regions defined by triangles t1Rect and t2Rect from images img1Rect and img2Rect, respectively, to align them with a target triangle tRect:
 
 ```Java
 warpImage1 = Mat.zeros(r.height, r.width, img1Rect.type());
@@ -226,7 +279,7 @@ applyAffineTransform(warpImage1, img1Rect, t1Rect, tRect);
 applyAffineTransform(warpImage2, img2Rect, t2Rect, tRect);
 ```
 
-Finally, perform the final steps of blending and copying triangular regions. It create an empty matrix imgRect to hold the blended rectangular patches, blends the warped images warpImage1 and warpImage2 using alpha blending, and stores the result in imgRect. It multiplies the triangular region of the morphed image imgMorph with the mask, and adds the blended rectangular patch imgRect to the triangular region of the morphed image imgMorph:
+Finally, we perform the final steps of **blending and copying triangular regions**. We an empty matrix imgRect to hold the blended rectangular patches, blends the warped images warpImage1 and warpImage2 using alpha blending, and stores the result in imgRect. It multiplies the triangular region of the morphed image imgMorph with the mask, and adds the blended rectangular patch imgRect to the triangular region of the morphed image imgMorph:
 
 ```Java
 // Alpha blend rectangular patches
@@ -238,3 +291,11 @@ Imgproc.cvtColor(imgRect, imgRect, Imgproc.COLOR_BGRA2BGR);
 Core.multiply(imgMorph.submat(r), mask, imgMorph.submat(r));
 Core.add(imgMorph.submat(r), imgRect, imgMorph.submat(r));
 ```
+
+### Results
+<p align="center">
+  ![Screenshot_from_2024-06-03_15-33-11-removebg-preview](https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/b3dcfb37-7d2c-44f7-903a-ef67038a8051)
+</p>
+
+
+
