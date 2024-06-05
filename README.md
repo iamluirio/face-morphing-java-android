@@ -293,15 +293,7 @@ Core.add(imgMorph.submat(r), imgRect, imgMorph.submat(r));
 ```
 
 ### Results
-
-<div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/5405ed1e-142d-4624-9dc2-323e2f6d2bdf" alt="Screenshot 1" style="height: 500px; width: auto;">
-  <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/99988b74-7bc5-4d33-8908-f45921d554e4" alt="Screenshot 2" style="height: 500px; width: auto;">
-</div>
-
-<div style="margin-bottom: 20px;">‎ </div>
-
-It is possible to use a ```SeekBar``` to control the α level dynamically to be used in the warping equation of the two images:
+It is possible to use a ```SeekBar``` to control the α level dynamically to be used in the warping equation of the two images. The result is as follows:
 
 ```Java
 seekBarAlpha.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -313,7 +305,20 @@ seekBarAlpha.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
     }
 ```
 
-The result is as follows:
+<div style="margin-bottom: 20px;">‎ </div>
+
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/5405ed1e-142d-4624-9dc2-323e2f6d2bdf" alt="Screenshot 1" style="height: 500px; width: auto;">
+  <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/99988b74-7bc5-4d33-8908-f45921d554e4" alt="Screenshot 2" style="height: 500px; width: auto;">
+</div>
+
+
+
+
+
+
+
+
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
   <div style="display: flex; justify-content: center;">
