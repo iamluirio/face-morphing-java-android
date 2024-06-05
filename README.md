@@ -299,18 +299,17 @@ Core.add(imgMorph.submat(r), imgRect, imgMorph.submat(r));
   <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/99988b74-7bc5-4d33-8908-f45921d554e4" alt="Screenshot 2" style="height: 500px; width: auto;">
 </div>
 
-It is possible to use a ```Java SeekBar``` to control the α level dynamically to be used in the warping equation of the two images:
+It is possible to use a ```SeekBar``` to control the α level dynamically to be used in the warping equation of the two images:
 
 ```Java
 seekBarAlpha.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                alpha = progress / 100.0;
-                textViewAlpha.setText(getString(R.string.label_value, String.valueOf(alpha)));
-                generate_morphImage();
-            }
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+    alpha = progress / 100.0;
+    textViewAlpha.setText(getString(R.string.label_value, String.valueOf(alpha)));
+    generate_morphImage();
+    }
 ```
-
 
 The result is as follows:
 
