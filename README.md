@@ -2,8 +2,8 @@
 
 <div style="margin-bottom: 20px;">‎ </div>
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/25181517/192108895-20dc3343-43e3-4a54-a90e-13a4abbc57b9.png" alt="Screenshot 1" style="height: 500px; width: auto;">
-  <img src="https://user-images.githubusercontent.com/25181517/117269608-b7dcfb80-ae58-11eb-8e66-6cc8753553f0.png" alt="Screenshot 2" style="height: 500px; width: auto;">
+  <img src="https://user-images.githubusercontent.com/25181517/192108895-20dc3343-43e3-4a54-a90e-13a4abbc57b9.png" alt="Screenshot 1"  width: auto;">
+  <img src="https://user-images.githubusercontent.com/25181517/117269608-b7dcfb80-ae58-11eb-8e66-6cc8753553f0.png" alt="Screenshot 2"  width: auto;">
 </div>
 <div style="margin-bottom: 20px;">‎ </div>
 
