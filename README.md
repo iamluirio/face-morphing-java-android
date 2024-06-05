@@ -311,8 +311,13 @@ seekBarAlpha.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             }
 ```
 
+
 The result is as follows:
 
-<div style="display: flex; justify-content: center; align-items: center; height: 500px;">
-    <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/98a1611c-010b-4990-a41e-a1c6c6725371" style="height: 500px; width: auto;">
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <div style="display: flex; justify-content: center;">
+    <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/98a1611c-010b-4990-a41e-a1c6c6725371" alt="Screenshot 1" style="height: 500px; width: auto;">
+  </div>
 </div>
+
+
