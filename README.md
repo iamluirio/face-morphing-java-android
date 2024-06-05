@@ -299,7 +299,7 @@ Core.add(imgMorph.submat(r), imgRect, imgMorph.submat(r));
   <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/99988b74-7bc5-4d33-8908-f45921d554e4" alt="Screenshot 2" style="height: 500px; width: auto;">
 </div>
 
-<div style="margin-bottom: 20px;">a</div>
+<div style="margin-bottom: 20px;"></div>
 
 It is possible to use a ```SeekBar``` to control the α level dynamically to be used in the warping equation of the two images:
 
@@ -317,7 +317,7 @@ The result is as follows:
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
   <div style="display: flex; justify-content: center;">
-    <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/98a1611c-010b-4990-a41e-a1c6c6725371" alt="Screenshot 1" style="height: 500px; width: auto;">
+    <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/1dc4abe2-72eb-4829-b4db-c4afa16af40f" alt="Screenshot 1" style="height: 500px; width: auto;">
   </div>
 </div>
 
