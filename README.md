@@ -316,7 +316,7 @@ The result is as follows:
 
 <div style="margin-bottom: 20px;">‎ </div>
 
-<div style="display: flex; justify-content: space-between;">
+<div style="display: flex; justify-content: center; gap: 20px;">
     <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/7ef79ec0-fcec-4f1a-996c-7fd6d4c61b0f" alt="Screenshot 2" style="height: 500px; width: auto;">
 </div>
 
