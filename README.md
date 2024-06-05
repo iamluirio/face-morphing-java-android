@@ -314,7 +314,7 @@ The result is as follows:
   <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/99988b74-7bc5-4d33-8908-f45921d554e4" alt="Screenshot 2" style="height: 500px; width: auto;">
 </div>
 
-![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/ptrespidi/face-morphing-java-android/blob/main/final-ezgif.com-optimize.gif))
+![](https://github.com/ptrespidi/face-morphing-java-android/blob/main/final-ezgif.com-optimize.gif)
 
 
 
