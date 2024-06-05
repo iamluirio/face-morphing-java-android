@@ -1,6 +1,11 @@
 # Face Morphing
 Face morphing is a process that involves the gradual transformation of one face into another. This technique is widely used in various fields such as animation, film, photography, and social media.  It typically involves blending two or more facial images to create a smooth transition from one face to another. The process requires sophisticated algorithms to accurately detect and map facial features, ensuring a realistic and natural-looking morph.
 
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/5405ed1e-142d-4624-9dc2-323e2f6d2bdf" alt="Screenshot 1" style="height: 500px; width: auto;">
+  <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/99988b74-7bc5-4d33-8908-f45921d554e4" alt="Screenshot 2" style="height: 500px; width: auto;">
+</div>
+
 The project consists of an app written in **Java Android**, using [**OpenCV**](https://opencv.org/) and the native [**Dlib**](http://dlib.net/) library.
 
 **OpenCV** (Open Source Computer Vision Library) is an open-source computer vision and machine learning software library. It's widely used for various applications, including image and video Processing (providing tools for basic image processing operations, such as filtering, transformation, and analysis) and feature detection and matching, including algorithms for detecting and matching features in images, such as corners, edges, and contours. It also supports advanced machine learning algorithms for object detection, face recognition, and object tracking.
@@ -310,8 +315,6 @@ The result is as follows:
 <div style="margin-bottom: 20px;">‎ </div>
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/5405ed1e-142d-4624-9dc2-323e2f6d2bdf" alt="Screenshot 1" style="height: 500px; width: auto;">
-  <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/99988b74-7bc5-4d33-8908-f45921d554e4" alt="Screenshot 2" style="height: 500px; width: auto;">
     <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/7ef79ec0-fcec-4f1a-996c-7fd6d4c61b0f" alt="Screenshot 2" style="height: 500px; width: auto;">
 </div>
 
