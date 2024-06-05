@@ -1,4 +1,12 @@
 # Face Morphing
+
+<div style="margin-bottom: 20px;">‎ </div>
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/25181517/192108895-20dc3343-43e3-4a54-a90e-13a4abbc57b9.png" alt="Screenshot 1" style="height: 500px; width: auto;">
+  <img src="https://user-images.githubusercontent.com/25181517/117269608-b7dcfb80-ae58-11eb-8e66-6cc8753553f0.png" alt="Screenshot 2" style="height: 500px; width: auto;">
+</div>
+<div style="margin-bottom: 20px;">‎ </div>
+
 Face morphing is a process that involves the gradual transformation of one face into another. This technique is widely used in various fields such as animation, film, photography, and social media.  It typically involves blending two or more facial images to create a smooth transition from one face to another. The process requires sophisticated algorithms to accurately detect and map facial features, ensuring a realistic and natural-looking morph.
 
 <div style="margin-bottom: 20px;">‎ </div>
