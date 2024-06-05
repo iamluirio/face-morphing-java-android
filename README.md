@@ -312,22 +312,8 @@ The result is as follows:
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/5405ed1e-142d-4624-9dc2-323e2f6d2bdf" alt="Screenshot 1" style="height: 500px; width: auto;">
   <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/99988b74-7bc5-4d33-8908-f45921d554e4" alt="Screenshot 2" style="height: 500px; width: auto;">
+  <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/6d3b51e0-ed7f-466d-9b7b-5c914de0ba0c" alt="Screenshot 3" style="height: 500px; width: auto;">
 </div>
-
-
-
-
-
-
-
-
-
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <div style="display: flex; justify-content: center;">
-    <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/1dc4abe2-72eb-4829-b4db-c4afa16af40f" alt="Screenshot 1" style="height: 500px; width: auto;">
-  </div>
-</div>
-
 
 
 
