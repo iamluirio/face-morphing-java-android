@@ -293,7 +293,7 @@ Core.add(imgMorph.submat(r), imgRect, imgMorph.submat(r));
 ```
 
 ### Results
-It is possible to use a ```SeekBar``` to control the α level dynamically to be used in the warping equation of the two images. The result is as follows:
+It is possible to use a ```SeekBar``` to control the α level dynamically to be used in the warping equation of the two images:
 
 ```Java
 seekBarAlpha.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -304,6 +304,8 @@ seekBarAlpha.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
     generate_morphImage();
     }
 ```
+
+The result is as follows:
 
 <div style="margin-bottom: 20px;">‎ </div>
 
