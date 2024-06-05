@@ -312,9 +312,9 @@ The result is as follows:
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/5405ed1e-142d-4624-9dc2-323e2f6d2bdf" alt="Screenshot 1" style="height: 500px; width: auto;">
   <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/99988b74-7bc5-4d33-8908-f45921d554e4" alt="Screenshot 2" style="height: 500px; width: auto;">
+    <img src="https://github.com/ptrespidi/face-morphing-java-android/assets/118205581/7ef79ec0-fcec-4f1a-996c-7fd6d4c61b0f" alt="Screenshot 2" style="height: 500px; width: auto;">
 </div>
 
-![](https://github.com/ptrespidi/face-morphing-java-android/blob/main/final-ezgif.com-optimize.gif)
 
 
 
