@@ -33,6 +33,14 @@ In this project, I follow the theoretical steps to take two input images as an e
 
 ## :ledger: Index
 - [Usage](##usage)
+- [Project Structure](##project-structure)
+- [Morphing Process](##morphing-process)
+  - [Identifying the Facial Landmarks](###identifying-the-facial-landmarks)
+  - [Delaunay Triangulation](###delaunay-triangulation)
+  - [Calculating Linear Interpolation for Morphed Image](###calculating-linear-interpolation-for-morphed-image)
+  - [Getting Delaunay Indexes and Reshaping](###getting-delaunay-indexes-and-reshaping)
+  - [Morphing Triangles and Images](###morphing-triangles-and-images)
+  - [Results](###results)
 
 ## Usage
 ```
