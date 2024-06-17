@@ -32,15 +32,15 @@ The [guide](https://learnopencv.com/face-morph-using-opencv-cpp-python/) reports
 In this project, I follow the theoretical steps to take two input images as an example, identify the facial key points and the correspondences in both, and follow the warping steps of the two images, to then merge them into a third.
 
 ## :ledger: Index
-- [Usage](https://github.com/iamluirio/face-morphing-java-android?tab=readme-ov-file#usage)
-- [Project Structure](https://github.com/iamluirio/face-morphing-java-android?tab=readme-ov-file#project-structure)
-- [Morphing Process](https://github.com/iamluirio/face-morphing-java-android?tab=readme-ov-file#morphing-process)
-  - [Identifying the Facial Landmarks](https://github.com/iamluirio/face-morphing-java-android?tab=readme-ov-file#identifying-the-facial-landmarks)
-  - [Delaunay Triangulation](https://github.com/iamluirio/face-morphing-java-android?tab=readme-ov-file#delaunay-triangulation)
-  - [Calculating Linear Interpolation for Morphed Image](https://github.com/iamluirio/face-morphing-java-android?tab=readme-ov-file#calculating-linear-interpolation-for-morphed-image)
-  - [Getting Delaunay Indexes and Reshaping](https://github.com/iamluirio/face-morphing-java-android?tab=readme-ov-file#getting-delaunay-indexes-and-reshaping)
-  - [Morphing Triangles and Images](https://github.com/iamluirio/face-morphing-java-android?tab=readme-ov-file#morphing-triangles-and-images)
-  - [Results](https://github.com/iamluirio/face-morphing-java-android?tab=readme-ov-file#results)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Morphing Process](#morphing-process)
+  - [Identifying the Facial Landmarks](#identifying-the-facial-landmarks)
+  - [Delaunay Triangulation](#delaunay-triangulation)
+  - [Calculating Linear Interpolation for Morphed Image](#calculating-linear-interpolation-for-morphed-image)
+  - [Getting Delaunay Indexes and Reshaping](#getting-delaunay-indexes-and-reshaping)
+  - [Morphing Triangles and Images](#morphing-triangles-and-images)
+  - [Results](#results)
 
 ## Usage
 ```
