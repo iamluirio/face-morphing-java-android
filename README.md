@@ -50,7 +50,7 @@ git clone https://github.com/ptrespidi/face-morphing-java-android.git
 Once you have downloaded the project, you can run the app and test its functionality through the FROM FILE button on the homepage. Inside _face-morphing-java-android/app/src/main/res/drawable_ there are two images for testing (the same ones used in the [official guide](https://learnopencv.com/face-morph-using-opencv-cpp-python/)), namely _ted_cruz.jpg_ and _hillary_clinton.jpg_.
 The CAMERA button has not been implemented, but what it should do is the same function, but enables the camera, takes two photos and places them in two imageViews, morphing them accordingly.
 
-For the simplicity of the project, I did not focus on adding functionality to the app, or making it more aesthetically pleasing, but rather the aim is to show the technical functioning and the process that leads to the manipulation of the two images using algorithmic computer vision techniques. To test the app you can add some images in _/drawable_, and set them in the two **imageViews** in _/face-morphing-java-android/app/src/main/res/layout/testactivity.xml_.
+For the simplicity of the project, I did not focus on adding functionality to the app, or making it more aesthetically pleasing, but rather the aim is to show the technical functioning and the process that leads to the manipulation of the two images using algorithmic computer vision techniques. To test the app you can add some images in _/drawable_, and set them in the two ```imageViews``` in _/face-morphing-java-android/app/src/main/res/layout/testactivity.xml_.
 
 The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=https%3A%2F%2Fit.wikiquote.org%2Fwiki%2FHillary_Clinton&psig=AOvVaw02vmpCURCC3hRz8hBEBfv0&ust=1717495315355000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMCI7uKWv4YDFQAAAAAdAAAAABAE) and [Senator Ted Cruz](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.texastribune.org%2Fdirectory%2Fted-cruz%2F&psig=AOvVaw18neygGh8LPqCv0vHTwwz2&ust=1717495282177000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCNDcitmWv4YDFQAAAAAdAAAAABAE) are in the Public Domain.
 
@@ -86,7 +86,7 @@ The images of [Secretary Hillary Clinton](https://www.google.com/url?sa=i&url=ht
 Let's see below the steps that lead to the morphing of the two faces (code is inside [Test.java](https://github.com/ptrespidi/face-morphing-java-android/blob/main/app/src/main/java/com/android/facemorphing/Test.java)).
 
 ### Identifying the Facial Landmarks
-The **dLibResult** is responsible for handling the results of dlib's facial detection and recognition algorithms. After processing the image, we retrieve a list of detected faces using **dLibResult.getFaces()**. For each face, we retrieve the positions of various facial landmarks (keypoints). We identify 68 facial landmarks using the pretrained _shape_predictor_68_face_landmarks_GTX.dat_.
+The **dLibResult** is responsible for handling the results of dlib's facial detection and recognition algorithms. After processing the image, we retrieve a list of detected faces using ```dLibResult.getFaces()```. For each face, we retrieve the positions of various facial landmarks (keypoints). We identify 68 facial landmarks using the pretrained _shape_predictor_68_face_landmarks_GTX.dat_.
 
 ```Java
 // Processing the image
@@ -148,7 +148,7 @@ for (int i = 0; i < numPunti; i++) {
 }
 ```
 Then, we exploit the **subdiv2D** object for Delaunay triangulation, which is a method to divide the plane into triangles with specific properties.
-_triangleList_ is a MatOfFloat6 object, which will store the resulting triangles from the triangulation. Each triangle is represented by six floating-point values (the coordinates of its three vertices):
+```triangleList``` is a ```MatOfFloat6``` object, which will store the resulting triangles from the triangulation. Each triangle is represented by six floating-point values (the coordinates of its three vertices):
 
 ```Java
 Size size = firstImage.size();
@@ -216,7 +216,7 @@ public static MatOfInt getDelaunayIndexes(MatOfFloat6 triangleList, MatOfPoint2f
 ```
 
 The following method **reshapes the vertices from a MatOfInt object into a format suitable for further processing**. It ensures that **the number of rows in the input vertices matrix is a multiple of 3**. 
-We create a new MatOfInt (reshapedVertices) with the appropriate dimensions to hold the reshaped vertices, and iterate through the rows of the input vertices matrix, each representing a triangle. For each triangle, we copy the vertex indices and converts them from double to int, and puts the reshaped vertex indices into the reshapedVertices matrix.
+We create a new ```MatOfInt``` (reshapedVertices) with the appropriate dimensions to hold the reshaped vertices, and iterate through the rows of the input vertices matrix, each representing a triangle. For each triangle, we copy the vertex indices and converts them from double to int, and puts the reshaped vertex indices into the reshapedVertices matrix.
 
 ```Java
 public static MatOfInt reshapeVertices(MatOfInt vertices) {
